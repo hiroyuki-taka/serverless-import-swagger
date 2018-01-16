@@ -46,7 +46,7 @@ const isTarget = (definition, options) => {
 const definitionToConfig = (definition, options) => {
   const service = extractServiceName(definition, options);
   const functionName = extractFunctionName(definition, options);
-  const handler = `handler.${functionName}`;
+  const handler = `handler.${changeCase.snakeCase(functionName)}`;
 
   let path;
   if (options.basePath) {
