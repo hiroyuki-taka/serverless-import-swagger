@@ -30,7 +30,7 @@ const isServiceExists = (converted, options) => Promise.resolve()
 const generateService = (converted, options) => Promise.resolve()
 .then(() => new Promise((resolve, reject) => {
   const serviceName = (options.servicePrefix) ? converted.service.slice(options.servicePrefix.length + 1) : converted.service;
-  const command = `${appRoot.path}/node_modules/.bin/sls create -t ${options.template} -p ${options.outDir}/${serviceName}`;
+  const command = `${appRoot.path}/node_modules/.bin/sls create -t aws-python3 -p ${options.outDir}/${serviceName}`;
 
   childProcess.exec(command, (error, stdout, stderr) => {
     if (error) {
